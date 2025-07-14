@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "shared",
+    "day01",
+    "day02",
+]
+resolver = "2"
+
+[workspace.dependencies]
+shared = { path = "shared" }
