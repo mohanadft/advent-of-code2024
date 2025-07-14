@@ -110,6 +110,11 @@ if ! grep -q "\"$DAY_DIR\"" Cargo.toml; then
     sed -i "/\"day[0-9][0-9]\"/a\\    \"$DAY_DIR\"," Cargo.toml
 fi
 
+# Create and checkout to new branch
+echo "📝 Creating and checking out to branch '$DAY_DIR'..."
+git checkout -b "$DAY_DIR"
+
 echo "✅ Created $DAY_DIR successfully!"
+echo "🌿 Switched to branch '$DAY_DIR'"
 echo "📝 Don't forget to add your puzzle input to $DAY_DIR/input.txt"
 echo "🚀 Run with: cargo run --bin $DAY_DIR"
