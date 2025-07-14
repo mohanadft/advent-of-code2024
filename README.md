@@ -76,6 +76,7 @@ This script will:
 - Create `README.md` with the Advent of Code problem link
 - Add the new day to the workspace `Cargo.toml`
 - Create an empty `input.txt` file
+- Create and switch to a new branch named `day03`
 
 **Manual method:**
 
