@@ -106,8 +106,8 @@ EOF
 
 # Add to workspace members
 if ! grep -q "\"$DAY_DIR\"" Cargo.toml; then
-    # Find the line with the last day and add the new one after it
-    sed -i "/\"day[0-9][0-9]\"/a\\    \"$DAY_DIR\"," Cargo.toml
+    # Find the line with the closing bracket and add the new day before it
+    sed -i "/^]/i\\    \"$DAY_DIR\"," Cargo.toml
 fi
 
 # Create and checkout to new branch
