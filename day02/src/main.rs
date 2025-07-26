@@ -18,7 +18,7 @@ fn solve_part1(lines: &[String]) -> i32 {
     let mut safe_reports: i32 = 0;
     for line in lines {
         let levels: Vec<u32> = line
-            .split(' ')
+            .split_whitespace()
             .map(|l| l.parse::<u32>().expect("Must be number"))
             .collect::<Vec<u32>>();
 
@@ -42,7 +42,7 @@ fn solve_part2(lines: &[String]) -> i32 {
 
     for line in lines {
         let levels: Vec<u32> = line
-            .split(' ')
+            .split_whitespace()
             .map(|l| l.parse::<u32>().expect("Must be number"))
             .collect::<Vec<u32>>();
 
@@ -62,7 +62,7 @@ fn solve_part2(lines: &[String]) -> i32 {
     safe_reports
 }
 
-fn is_safe_report(levels: &Vec<u32>) -> bool {
+fn is_safe_report(levels: &[u32]) -> bool {
     let differences: Vec<i32> = levels
         .windows(2)
         .map(|pair| pair[1] as i32 - pair[0] as i32)
